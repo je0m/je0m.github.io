@@ -1,0 +1,106 @@
+/*
+    style.css -- base article typography and layout
+
+    Copyright (C) 2026  Your Name
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version. See LICENSE for the full text.
+*/
+
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    padding: 24px;
+    color: #000;
+    background: #fff;
+    line-height: 24px;
+    font-size: 17px;
+    /* Free, metric-compatible alternatives come first; proprietary
+       Times New Roman is kept only as a last-resort fallback for
+       systems that lack the free fonts installed. */
+    font-family: monospace, monospace;
+}
+
+header {
+    width: 1000px;
+}
+
+h1 {
+    font-size: 34px;
+    line-height: 48px;
+    padding: 12px 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 25px;
+    line-height: 48px;
+    padding: 15px 0 9px 0;
+}
+
+img, figure {
+    display: block;
+}
+figure {
+    position: relative;
+    padding-bottom: 24px;
+}
+
+p {
+    padding: 7px 0 17px 0;
+}
+
+div#article {
+    width: 1000px;
+    padding-right: 300px; /* reserves room for the sidenote column */
+    position: relative;
+    margin: 0 auto;
+}
+
+p.epigraph {
+    text-align: center;
+    font-style: italic;
+    padding-left: 180px;
+    padding-right: 180px;
+}
+
+p.ack {
+    font-size: 13px;
+}
+
+blockquote {
+    padding-left: 64px;
+    padding-right: 120px;
+    text-align: justify;
+}
+
+a.footnote {
+    font-size: 13px;
+    line-height: 13px;
+    vertical-align: super;
+}
+
+.footnotes-processed a.footnote {
+    color: black;
+    text-decoration: none;
+}
+.footnotes-processed a.footnote:before { content: '['; }
+.footnotes-processed a.footnote:after  { content: ']'; }
+
+@media (max-width: 1300px) {
+    /* Below this width there isn't room for a 1000px article plus a
+       300px sidenote column; fall back to footnotes at the bottom. */
+    div#article {
+        width: 100%;
+        max-width: 700px;
+        padding-right: 0;
+    }
+    header, p.epigraph, blockquote { width: auto; }
+}

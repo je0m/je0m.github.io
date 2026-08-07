@@ -1,0 +1,107 @@
+/*
+    sidenotes.css -- margin footnotes, two-image figures, appendix tables
+
+    Copyright (C) 2026  Your Name
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version. See LICENSE for the full text.
+*/
+
+/* --- Sidenote footnotes --------------------------------------------- */
+/* sidenotes.js adds .footnotes-side to div.footnotes and positions
+   each <li> with an inline `top` matching the paragraph it annotates. */
+
+div.footnotes {
+    font-size: 13px;
+}
+div.footnotes-side {
+    width: 250px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+div.footnotes-side li {
+    padding: 7px 0 17px 0;
+    position: absolute;
+}
+div.footnotes-side li p {
+    padding: 0 0 0 8px;
+    border-left: 1px solid #333;
+    text-indent: 24px;
+}
+div.footnotes-side li p:first-child {
+    text-indent: 0;
+}
+div.footnotes-side a.reversefootnote {
+    display: none; /* the "return to text" arrow only makes sense
+                       when footnotes are at the bottom of the page */
+}
+div.footnotes-side hr {
+    display: none;
+}
+
+/* --- Two-image figure block ------------------------------------------ */
+
+div.two_images {
+    overflow: auto;
+    width: 1000px;
+}
+div.two_images figure {
+    float: left;
+    width: 500px;
+}
+div.two_images figcaption {
+    font-style: italic;
+}
+div.two_images figure:last-child figcaption {
+    text-align: right;
+}
+
+/* --- Appendix ---------------------------------------------------------- */
+
+#appendix {
+    font-size: 13px;
+    margin-top: 48px;         /* adjust to taste -- this is just a section break */
+    padding-top: 24px;
+    border-top: 1px solid #333;
+    font-family: monospace, monospace;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#appendix h2 {
+    padding-top: 24px;
+    font-weight: normal;
+    font-size: 26px;
+}
+
+/* --- Table styling ------------------------------------------------------ */
+
+table {
+    border-spacing: 0;
+}
+table ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+th {
+    text-align: left;
+}
+th, td {
+    padding: 7px 3ex 16px;
+    vertical-align: top;
+    border-bottom: 1px solid #333;
+}
+td p:first-child { padding-top: 0; }
+td p:last-child  { padding-bottom: 0; }
+th:last-child, td:last-child   { padding-right: 0; }
+th:first-child,  td:first-child { padding-left: 0; }
+
+/* Optional utility class -- apply to any <table> you want to render
+   with a bold first column, e.g. for a labelled comparison table. */
+table.data-table tr > td:first-child {
+    font-weight: bold;
+}
