@@ -7,16 +7,57 @@ appendix section gets its own table styling.
 
 ## Files
 
-- `index.html` — the page itself. Also serves as a working demo of every
+- `index.html` — the homepage, and the site root. Bio, work, photos, and
+  an appendix of exhibitions/talks/workshops/jury/curating. Links to
+  `essay.html`.
+- `essay.html` — the essay page. Also serves as a working demo of every
   format feature, with instructions in place of real content — replace
-  as you go.
+  as you go. Links back to `index.html`.
 - `style.css` — base article typography (fonts, headings, width, epigraph).
+  Shared by both pages.
 - `sidenotes.css` — the sidenote/footnote mechanism, two-image figures, and
-  appendix/table styling.
+  appendix/table styling. Shared by both pages — the homepage has no
+  stylesheet of its own; every part of it is built from components
+  `essay.html` already uses (see below).
 - `sidenotes.js` — ~50 lines of vanilla JS that positions the footnotes.
-  No jQuery, no build step.
+  No jQuery, no build step. Shared by both pages.
 - `LICENSE` — the GNU General Public License v3, copied verbatim from
   `/usr/share/common-licenses/GPL-3` on this machine.
+
+## The homepage (`index.html`)
+
+The homepage is a CV-style landing page: bio, work, photos, and a longer
+appendix of exhibitions and other engagements. Rather than invent a new
+stylesheet for it, every section reuses a component `essay.html` already
+defines in `style.css`/`sidenotes.css`:
+
+- **header** — `h1` for your name, `p.epigraph` for an optional one-line
+  tagline, the same as the essay page's title block.
+- **nav link to the essay page** — a plain paragraph right under the
+  header.
+- **bio** — ordinary paragraphs under an `h2`, with two footnotes
+  attached (`div.footnotes`, positioned by `sidenotes.js` exactly as on
+  the essay page) so asides about an affiliation or a title don't have
+  to clutter the bio text itself.
+- **contact** — `p.ack`, the same small-print class the essay page uses
+  for acknowledgements.
+- **work** — one `p` per category (`author:`, `co-author:`, `wrote:`,
+  `books:`, `blogs:`), each with a bold inline label rather than another
+  `h2`, so the section doesn't get heading-heavy.
+- **photos** — `div.two_images`, the same side-by-side figure block the
+  essay page uses for image comparisons, repurposed here for two
+  portraits with dated captions.
+- **exhibitions, workshops, jury, curating** — one `#appendix` block,
+  each history as its own `table.data-table` (Appendix A–D). A
+  year-by-year list is genuinely tabular data, so it gets the same
+  table styling the essay page's own appendix demonstrates, with the
+  Year column bolded via `data-table`.
+- **closing image** — a plain `<img>` at the very end, sized with a
+  `width` attribute the same way the two-image figures are.
+
+All of it is placeholder text — like `essay.html`, treat it as a working
+demo to delete and replace section by section rather than a finished
+page.
 
 ## Why it's built this way
 

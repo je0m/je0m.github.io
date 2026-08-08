@@ -1,0 +1,99 @@
+<!--
+    Copyright (C) 2026  Your Name
+
+    This file is part of [Your Page Name].
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version. See LICENSE for the full text.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Essay Title</title>
+  <meta name="description" content="A one-sentence description of this page, used by search engines and link previews.">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="sidenotes.css">
+</head>
+<body>
+
+<div id="article">
+  <p><a href="index.html">&larr; home</a></p>
+
+  <header>
+    <h1>Your Essay Title</h1>
+
+    <p class="epigraph">"Replace this with a short quotation, or delete the paragraph
+      entirely if you don't want an epigraph."<br>
+      &mdash; Attribution, Year</p>
+  </header>
+
+  <h2 id="first-section">A First Section</h2>
+
+  <p>This is a normal paragraph. Write your real content here. The template's
+    signature feature is the sidenote: footnotes are pulled out of the flow of
+    reading and placed in the right margin, lined up with the paragraph that
+    references them, instead of being buried at the bottom of the page.<a
+      href="#fn-example" id="fnref-example" class="footnote">1</a> Add as many
+    as you like &mdash; the script keeps them from overlapping vertically.</p>
+
+  <p>A second paragraph, to show that each footnote's sidenote aligns with
+    <em>its own</em> paragraph, not just the top of the page.<a href="#fn-second"
+      id="fnref-second" class="footnote">2</a> Resize the browser window and the
+    sidenotes will reflow to match.</p>
+
+  <blockquote>
+    Blockquotes are indented and justified, and get extra right-hand padding so
+    they don't collide with the sidenote column.
+  </blockquote>
+
+  <h2 id="images">A Two-Image Figure</h2>
+
+  <p>Use <code>div.two_images</code> when you want to place two images side by
+    side, each with its own caption &mdash; useful for before/after or
+    side-by-side comparisons.</p>
+
+  <div class="two_images">
+    <figure>
+      <img src="your-image-1.jpg" width="500" alt="Description of the first image.">
+      <figcaption>Caption for the left image.</figcaption>
+    </figure>
+    <figure>
+      <img src="your-image-2.jpg" width="500" alt="Description of the second image.">
+      <figcaption>Caption for the right image.</figcaption>
+    </figure>
+  </div>
+
+  <p class="ack">Acknowledgements, if you want them, go here in smaller type.</p>
+
+  <div class="footnotes">
+    <ol>
+      <li id="fn-example">
+        <p>This is the first footnote's text. <a href="#fnref-example"
+          class="reversefootnote">&#8617;</a></p>
+      </li>
+      <li id="fn-second">
+        <p>This is the second footnote's text. <a href="#fnref-second"
+          class="reversefootnote">&#8617;</a></p>
+      </li>
+    </ol>
+  </div>
+
+  <div id="appendix">
+    <h2 id="appendix-a">Appendix A: A Data Table</h2>
+    <table>
+      <tr><th>Year</th><th>Note</th><th>Detail</th></tr>
+      <tr><td>2024</td><td>Example row</td><td>Replace with your own data.</td></tr>
+      <tr><td>2025</td><td>Another row</td><td>Tables get a bottom border per row automatically.</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<script src="sidenotes.js"></script>
+</body>
+</html>
